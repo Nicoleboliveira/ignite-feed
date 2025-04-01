@@ -12,7 +12,7 @@ export function Comment() {
                     <header>
                         <div className={styles.authorAndTime}>
                             <strong>Nicole Brenda</strong>
-                            <time title='01 de Abril às 09:59' datetime="2025-04-01 09:59"> Cerca de 1h atrás</time>
+                            <time title='01 de Abril às 09:59' dateTime="2025-04-01 09:59"> Cerca de 1h atrás</time>
                         </div>
                         
                         <button title="Deletar comentário">
