@@ -8,3 +8,18 @@
   gap: 2rem;
   align-items: flex-start;
 }
+
+@media (max-width: 768px) {
+  html {
+    font-size: 87.5%;
+    /* ( regra de três)
+     16rem - 100%|
+      14px - x  
+      
+      14x100=1400 | 1400/16=87.5 
+     (87.5% é o resultado para a proporção da redução de tamanho do html para celular se quero colocar como 14px)*/
+  }
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+}
