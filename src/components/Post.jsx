@@ -6,7 +6,7 @@ import styles from "./Post.module.css";
 import { useState } from "react";
 
 export function Post({ author, publishedAt, content }) {
-  const [comments, setComments] = useState([1, 2]);
+  const [comments, setComments] = useState([" bacana"]);
 
   const publishedDateFormatted = format(
     publishedAt,
@@ -23,6 +23,14 @@ export function Post({ author, publishedAt, content }) {
     event.preventDefault();
 
     setComments([...comments, comments.length + 1]);
+  }
+
+  function handleNewCommentChange() {
+    setNewCommentText(event.target.value);
+  }
+
+  function deleteComment(comment) {
+    console.log(`Deletar comentário ${comment}`);
   }
 
   return (
@@ -69,7 +77,13 @@ export function Post({ author, publishedAt, content }) {
 
       <div className={styles.commentList}>
         {comments.map((comment) => {
-          return <Comment key={comment} content={comment} />;
+          return (
+            <Comment
+              key={comment}
+              content={comment}
+              onDeleteComment={deleteComment}
+            />
+          );
         })}
       </div>
     </article>
